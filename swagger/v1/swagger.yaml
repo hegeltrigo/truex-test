@@ -4,6 +4,92 @@ info:
   title: API V1
   version: v1
 paths:
+  "/api/v1/dish_sizes":
+    get:
+      summary: get all dished
+      tags:
+      - Dish Sizes
+      consumes:
+      - application/json
+      - application/xml
+      responses:
+        '200':
+          description: get all dish_types
+    post:
+      summary: Creates a dish_types
+      tags:
+      - Dish Sizes
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: dish_size
+        in: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            description:
+              type: string
+      responses:
+        '201':
+          description: Dish Sizes created
+  "/api/v1/dish_sizes/{id}":
+    get:
+      summary: get dish_types
+      tags:
+      - Dish Sizes
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: integer
+        required: true
+      responses:
+        '200':
+          description: get dish_types
+    put:
+      summary: Update a dish_types
+      tags:
+      - Dish Sizes
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: integer
+        required: true
+      - name: dish_size
+        in: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            description:
+              type: string
+      responses:
+        '200':
+          description: Dish Sizes updated
+    delete:
+      summary: remove dish_types
+      tags:
+      - Dish Sizes
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: string
+        required: true
+      responses:
+        '204':
+          description: authenticated
   "/api/v1/dishes":
     get:
       summary: get all dished
@@ -79,6 +165,348 @@ paths:
       summary: remove dishes
       tags:
       - Dishes
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: string
+        required: true
+      responses:
+        '204':
+          description: authenticated
+  "/api/v1/dish_types":
+    get:
+      summary: get all dished
+      tags:
+      - Dish Types
+      consumes:
+      - application/json
+      - application/xml
+      responses:
+        '200':
+          description: get all dish_types
+    post:
+      summary: Creates a dish_types
+      tags:
+      - Dish Types
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: dish_type
+        in: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            description:
+              type: string
+      responses:
+        '201':
+          description: Dish Types created
+  "/api/v1/dish_types/{id}":
+    get:
+      summary: get dish_types
+      tags:
+      - Dish Types
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: integer
+        required: true
+      responses:
+        '200':
+          description: get dish_types
+    put:
+      summary: Update a dish_types
+      tags:
+      - Dish Types
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: integer
+        required: true
+      - name: dish_type
+        in: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            description:
+              type: string
+      responses:
+        '200':
+          description: Dish Types updated
+    delete:
+      summary: remove dish_types
+      tags:
+      - Dish Types
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: string
+        required: true
+      responses:
+        '204':
+          description: authenticated
+  "/api/v1/options":
+    get:
+      summary: get all option
+      tags:
+      - options
+      consumes:
+      - application/json
+      - application/xml
+      responses:
+        '200':
+          description: get all options
+    post:
+      summary: Creates a options
+      tags:
+      - options
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: option
+        in: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            description:
+              type: string
+      responses:
+        '201':
+          description: options created
+  "/api/v1/options/{id}":
+    get:
+      summary: get options
+      tags:
+      - options
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: integer
+        required: true
+      responses:
+        '200':
+          description: get options
+    put:
+      summary: Update a options
+      tags:
+      - options
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: integer
+        required: true
+      - name: option
+        in: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            description:
+              type: string
+      responses:
+        '200':
+          description: options updated
+    delete:
+      summary: remove options
+      tags:
+      - options
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: string
+        required: true
+      responses:
+        '204':
+          description: authenticated
+  "/api/v1/option_types":
+    get:
+      summary: get all dished
+      tags:
+      - Option Types
+      consumes:
+      - application/json
+      - application/xml
+      responses:
+        '200':
+          description: get all dish_types
+    post:
+      summary: Creates a dish_types
+      tags:
+      - Option Types
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: option_type
+        in: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            description:
+              type: string
+      responses:
+        '201':
+          description: Option Types created
+  "/api/v1/option_types/{id}":
+    get:
+      summary: get dish_types
+      tags:
+      - Option Types
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: integer
+        required: true
+      responses:
+        '200':
+          description: get dish_types
+    put:
+      summary: Update a dish_types
+      tags:
+      - Option Types
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: integer
+        required: true
+      - name: option_type
+        in: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            description:
+              type: string
+      responses:
+        '200':
+          description: Option Types updated
+    delete:
+      summary: remove dish_types
+      tags:
+      - Option Types
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: string
+        required: true
+      responses:
+        '204':
+          description: authenticated
+  "/api/v1/orders":
+    get:
+      summary: get all option
+      tags:
+      - Orders
+      consumes:
+      - application/json
+      - application/xml
+      responses:
+        '200':
+          description: get all orders
+    post:
+      summary: Creates a orders
+      tags:
+      - Orders
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: order
+        in: body
+        schema:
+          type: object
+          properties:
+            client_name:
+              type: string
+      responses:
+        '201':
+          description: orders created
+  "/api/v1/orders/{id}":
+    get:
+      summary: get orders
+      tags:
+      - Orders
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: integer
+        required: true
+      responses:
+        '200':
+          description: get orders
+    put:
+      summary: Update a orders
+      tags:
+      - Orders
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: id
+        in: path
+        type: integer
+        required: true
+      - name: order
+        in: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+            description:
+              type: string
+      responses:
+        '200':
+          description: orders updated
+    delete:
+      summary: remove orders
+      tags:
+      - Orders
       consumes:
       - application/json
       - application/xml
