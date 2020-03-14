@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_14_045208) do
+ActiveRecord::Schema.define(version: 2020_03_14_153313) do
 
   create_table "dish_options", force: :cascade do |t|
     t.integer "dish_id", null: false
@@ -43,6 +43,24 @@ ActiveRecord::Schema.define(version: 2020_03_14_045208) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "line_dishes", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "dish_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dish_id"], name: "index_line_dishes_on_dish_id"
+    t.index ["order_id"], name: "index_line_dishes_on_order_id"
+  end
+
+  create_table "line_options", force: :cascade do |t|
+    t.integer "line_dish_id", null: false
+    t.integer "option_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["line_dish_id"], name: "index_line_options_on_line_dish_id"
+    t.index ["option_id"], name: "index_line_options_on_option_id"
+  end
+
   create_table "option_types", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -67,5 +85,9 @@ ActiveRecord::Schema.define(version: 2020_03_14_045208) do
 
   add_foreign_key "dish_options", "dishes"
   add_foreign_key "dish_options", "options"
+  add_foreign_key "line_dishes", "dishes"
+  add_foreign_key "line_dishes", "orders"
+  add_foreign_key "line_options", "line_dishes"
+  add_foreign_key "line_options", "options"
   add_foreign_key "options", "option_types"
 end
