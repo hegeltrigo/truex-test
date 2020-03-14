@@ -17,7 +17,7 @@ class Api::V1::DishesController < ApplicationController
     @dish = Dish.new(dish_params)
 
     if @dish.save
-      render json: @dish, status: :created, location: @dish
+      render json: @dish, status: :created
     else
       render json: @dish.errors, status: :unprocessable_entity
     end
