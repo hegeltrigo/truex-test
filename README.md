@@ -32,9 +32,12 @@ $ rspec
 
 ### DB Diagram
 
+![alt text](https://raw.githubusercontent.com/hegeltrigo/truex-test/master/public/truexdb.png)
 
 ### API Documentation
 
+Go to browser http://localhos:3000
+![alt text](https://raw.githubusercontent.com/hegeltrigo/truex-test/master/public/doc.png)
 
 
 
