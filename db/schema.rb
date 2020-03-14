@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_14_153313) do
+ActiveRecord::Schema.define(version: 2020_03_14_162107) do
 
   create_table "dish_options", force: :cascade do |t|
     t.integer "dish_id", null: false
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2020_03_14_153313) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "slices"
+    t.integer "dish_id"
+    t.index ["dish_id"], name: "index_dish_sizes_on_dish_id"
   end
 
   create_table "dish_types", force: :cascade do |t|
@@ -34,6 +36,8 @@ ActiveRecord::Schema.define(version: 2020_03_14_153313) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "dish_id"
+    t.index ["dish_id"], name: "index_dish_types_on_dish_id"
   end
 
   create_table "dishes", force: :cascade do |t|
@@ -85,6 +89,8 @@ ActiveRecord::Schema.define(version: 2020_03_14_153313) do
 
   add_foreign_key "dish_options", "dishes"
   add_foreign_key "dish_options", "options"
+  add_foreign_key "dish_sizes", "dishes"
+  add_foreign_key "dish_types", "dishes"
   add_foreign_key "line_dishes", "dishes"
   add_foreign_key "line_dishes", "orders"
   add_foreign_key "line_options", "line_dishes"
