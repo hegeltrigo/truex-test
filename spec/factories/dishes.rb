@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :dish do
-    name 'Test'
-    description 'Description'
+    name { Faker::Food }
+    description { Faker::Food.description }
   end  
 end
