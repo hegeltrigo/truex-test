@@ -1,24 +1,31 @@
-# README
+# Truex Test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a tes for Truextend Company
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+install git https://git-scm.com/download/linux
 
-* System dependencies
+$ git clone git@github.com:hegeltrigo/truex-test.git
+$ cd truex-test
 
-* Configuration
+### Prerequisites
 
-* Database creation
+rvm https://rvm.io/rvm/install
 
-* Database initialization
+### Installing
 
-* How to run the test suite
+$ rake db:drop db:create db:migrate 
+$ rails s
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Running the tests
 
-* ...
+$ rake db:drop db:create db:migrate
+$ rspec
+
+
+## Authors
+
+* **Hegel Trigo ** - *Initial work* - [PurpleBooth](https://www.linkedin.com/in/hegeltrigo/)
+
