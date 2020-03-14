@@ -8,6 +8,7 @@ gem 'sqlite3', '~> 1.4'
 gem 'puma', '~> 4.1'
 gem 'rspec-core', '~> 3.4'
 gem 'rswag'
+gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 

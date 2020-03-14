@@ -18,7 +18,7 @@ paths:
     post:
       summary: Creates a dishes
       tags:
-      - dishes
+      - Dishes
       consumes:
       - application/json
       - application/xml
@@ -39,7 +39,7 @@ paths:
     get:
       summary: get dishes
       tags:
-      - dishes
+      - Dishes
       consumes:
       - application/json
       - application/xml
@@ -54,7 +54,7 @@ paths:
     put:
       summary: Update a dishes
       tags:
-      - dishes
+      - Dishes
       consumes:
       - application/json
       - application/xml
@@ -78,7 +78,7 @@ paths:
     delete:
       summary: remove dishes
       tags:
-      - dishes
+      - Dishes
       consumes:
       - application/json
       - application/xml
