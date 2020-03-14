@@ -46,6 +46,6 @@ class Api::V1::OptionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def option_params
-      params.require(:option).permit(:name, :description)
+      params.require(:option).permit(:name, :description, :option_type_id)
     end
 end

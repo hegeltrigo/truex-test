@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_14_033029) do
+ActiveRecord::Schema.define(version: 2020_03_14_040329) do
+
+  create_table "dish_options", force: :cascade do |t|
+    t.integer "dish_id", null: false
+    t.integer "option_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dish_id"], name: "index_dish_options_on_dish_id"
+    t.index ["option_id"], name: "index_dish_options_on_option_id"
+  end
 
   create_table "dish_types", force: :cascade do |t|
     t.string "name"
@@ -38,6 +47,11 @@ ActiveRecord::Schema.define(version: 2020_03_14_033029) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "option_type_id"
+    t.index ["option_type_id"], name: "index_options_on_option_type_id"
   end
 
+  add_foreign_key "dish_options", "dishes"
+  add_foreign_key "dish_options", "options"
+  add_foreign_key "options", "option_types"
 end
