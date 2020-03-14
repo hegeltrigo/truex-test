@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :dish_types
       resources :options
       resources :option_types
+      resources :dish_sizes
     end  
   end  
 end
