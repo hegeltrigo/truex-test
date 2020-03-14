@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_14_041324) do
+ActiveRecord::Schema.define(version: 2020_03_14_045208) do
 
   create_table "dish_options", force: :cascade do |t|
     t.integer "dish_id", null: false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_041324) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "slices"
   end
 
   create_table "dish_types", force: :cascade do |t|
@@ -56,6 +57,12 @@ ActiveRecord::Schema.define(version: 2020_03_14_041324) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "option_type_id"
     t.index ["option_type_id"], name: "index_options_on_option_type_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "client_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "dish_options", "dishes"
