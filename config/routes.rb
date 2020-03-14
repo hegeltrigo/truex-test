@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :dishes
       resources :dish_types
+      resources :options
     end  
   end  
 end
