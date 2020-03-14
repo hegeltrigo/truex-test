@@ -36,12 +36,13 @@ $ rspec
 
 ### API Documentation
 
-Go to browser http://localhos:3000
+Go to browser http://localhost:3000/api-docs
+
 ![alt text](https://raw.githubusercontent.com/hegeltrigo/truex-test/master/public/doc.png)
 
 
 
 ## Authors
 
-* **Hegel Trigo ** - *Initial work* - [PurpleBooth](https://www.linkedin.com/in/hegeltrigo/)
+* **Hegel Trigo ** - *Initial work* - [Hegeltron](https://www.linkedin.com/in/hegeltrigo/)
 
