@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :orders
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
   namespace :api do
@@ -9,6 +8,7 @@ Rails.application.routes.draw do
       resources :options
       resources :option_types
       resources :dish_sizes
+      resources :orders
     end  
   end  
 end
