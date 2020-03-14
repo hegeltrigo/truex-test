@@ -9,7 +9,7 @@ RSpec.describe Option, type: :model do
     expect(@option).to be_valid
   end
 
-  let(:option) { DishType.new }
+  let(:option) { Option.new }
   it "is not valid without name" do
     expect(option).to_not be_valid
   end
