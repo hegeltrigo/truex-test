@@ -5,7 +5,7 @@ ruby '2.6.5'
 
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'sqlite3', '~> 1.4'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'rspec-core', '~> 3.4'
 gem 'rswag'
 gem 'active_model_serializers', '~> 0.10.0'
